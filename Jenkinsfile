@@ -1,10 +1,5 @@
 pipeline {
 
-    parameters {
-        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
-        booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
-
-    }
 
 
      environment {
@@ -38,13 +33,13 @@ pipeline {
                 sh 'pwd;terraform show -no-color tfplan > tfplan.txt'
             }
         }
-       }
+       
 
         stage('Apply') {
             steps {
                 sh "pwd; terraform apply -input=false tfplan"
             }
         }
-    }
+    
 
   }
