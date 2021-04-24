@@ -8,7 +8,7 @@ resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
   key_name = "Vishnu1"
   count = var.ec2_count
-  vpc_security_group_ids = ["${aws_security_group.ec2-sg_04.id}"]
+  vpc_security_group_ids = ["${aws_security_group.ec2-sg_10.id}"]
 
 
   tags = {
@@ -24,8 +24,8 @@ variable "environment" {
   default = "Prod"
 }
 
-resource "aws_security_group" "ec2-sg_04" {
-  name        = "${var.environment}-ec2-sg_04"
+resource "aws_security_group" "ec2-sg_10" {
+  name        = "${var.environment}-ec2-sg_10"
 
   ingress {
     from_port   = 22
@@ -42,6 +42,6 @@ resource "aws_security_group" "ec2-sg_04" {
   }
 
   tags = {
-    Name = "ec2-sg_04"
+    Name = "ec2-sg_10"
   }
 }
