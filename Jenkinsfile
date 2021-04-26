@@ -1,7 +1,4 @@
 pipeline {
-
-
-
      environment {
         AWS_ACCESS_KEY_ID     = credentials('Access_Key_AWS')
         AWS_SECRET_ACCESS_KEY = credentials('Secret_Key_AWS')
