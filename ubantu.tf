@@ -18,10 +18,10 @@ resource "aws_instance" "ec2" {
 
 variable "ec2_count" {
   type = number
-  default = "3"
+  default = "4"
 }
 variable "environment" {
-  default = "Prod"
+  default = "Production"
 }
 
 resource "aws_security_group" "ec2-sg_3" {
