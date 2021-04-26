@@ -6,7 +6,7 @@ provider "aws" {
 resource "aws_instance" "ec2" {
   ami           = "ami-08962a4068733a2b6"
   instance_type = "t2.micro"
-  key_name = "dineshKeyFinal"
+  key_name = "dineshKey"
   count = var.ec2_count
   vpc_security_group_ids = ["${aws_security_group.ec2-sg_1.id}"]
 
@@ -24,8 +24,8 @@ variable "environment" {
   default = "Prod"
 }
 
-resource "aws_security_group" "ec2-sg_1" {
-  name        = "${var.environment}-ec2-sg_1"
+resource "aws_security_group" "ec2-sg_2" {
+  name        = "${var.environment}-ec2-sg_2"
 
   ingress {
     from_port   = 22
@@ -42,6 +42,6 @@ resource "aws_security_group" "ec2-sg_1" {
   }
 
   tags = {
-    Name = "ec2-sg_1"
+    Name = "ec2-sg_2"
   }
 }
