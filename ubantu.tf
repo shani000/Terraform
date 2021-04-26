@@ -8,7 +8,7 @@ resource "aws_instance" "ec2" {
   instance_type = "t2.micro"
   key_name = "dineshKey"
   count = var.ec2_count
-  vpc_security_group_ids = ["${aws_security_group.ec2-sg_1.id}"]
+  vpc_security_group_ids = ["${aws_security_group.ec2-sg_2.id}"]
 
 
   tags = {
