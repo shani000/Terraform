@@ -18,7 +18,7 @@ resource "aws_instance" "ec2" {
 
 variable "ec2_count" {
   type = number
-  default = "4"
+  default = "3"
 }
 variable "environment" {
   default = "Prod"
